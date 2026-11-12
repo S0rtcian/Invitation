@@ -160,6 +160,29 @@ dialog.lb::backdrop{background:rgba(4,30,50,.7)}
 .lb img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
 .lbx{padding:10px 0 4px;font-size:.9rem}
 
+/* Phone fit: nothing may be wider than the screen */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+#swimmers{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.swim{pointer-events:auto}
+.gp-box{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.gp-box>div{min-width:0}
+.gp li{overflow-wrap:anywhere}
+.info{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.info>div{min-width:0}
+@media (max-width:380px){
+  .poster{padding-left:16px;padding-right:16px}
+  .gp-box>div{padding:0 6px}
+  .gp li{font-size:.98rem}
+  .gp h4{font-size:1.3rem;gap:6px}
+  .info p{font-size:1rem}
+  .big{font-size:1.45rem}
+  .pol{padding:6px}
+  .pol .foot{height:28px}
+  .line{gap:10px}
+}
+  
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
